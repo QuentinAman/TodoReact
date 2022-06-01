@@ -1,12 +1,11 @@
 import react, { useState } from "react";
 import { TodoItem, Icon, Button, Modal, Input } from "..";
+import { HandleTaskModal } from "../Modal/ModalModels";
 import "./todolist.scss";
 
 export const TodoList = () => {
-  const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [modal, setModal] = useState(false);
-  const [error, setError] = useState("");
 
   const date = new Date();
   const weekday = date.toLocaleString("en-en", { weekday: "long" });
@@ -19,23 +18,22 @@ export const TodoList = () => {
     setTodos(newTodos);
   };
 
-  const handleAdd = () => {
-    if (todo.length === 0) {
-      setError("You must enter a todo");
-      return;
-    }
-
+  const handleAdd = (todo) => {
     const newTodos = [...todos];
     newTodos.push({ text: todo, done: false });
     setTodos(newTodos);
-    setTodo("");
     setModal(false);
-    setError("");
   };
 
   const handleDone = (index) => {
     const newTodos = [...todos];
     newTodos[index].done = !newTodos[index].done;
+    setTodos(newTodos);
+  };
+
+  const handleEdit = (index, text) => {
+    const newTodos = [...todos];
+    newTodos[index].text = text;
     setTodos(newTodos);
   };
 
@@ -74,9 +72,11 @@ export const TodoList = () => {
         {todos.length ? (
           todos.map((todo, index) => (
             <TodoItem
+              onDelete={() => handleDelete(index)}
               todo={todo}
               onRemove={() => handleDelete(index)}
               onDone={() => handleDone(index)}
+              onEdit={(text) => handleEdit(index, text)}
               key={index}
             />
           ))
@@ -88,8 +88,6 @@ export const TodoList = () => {
       </ul>
       <Button
         onClick={() => {
-          setTodo("");
-          setError("");
           setModal(!modal);
         }}
         className={`TodoList-button ${modal ? "TodoList-button--active" : ""}`}
@@ -101,24 +99,10 @@ export const TodoList = () => {
         />
       </Button>
       {modal && (
-        <Modal onClose={() => setModal(false)}>
-          <div className="TodoList-modal">
-            <h2>Add Task</h2>
-            <Input
-              placeholder="Add a Task here"
-              value={todo}
-              onChange={setTodo}
-              error={error}
-              onEnter={handleAdd}
-            />
-            <Button
-              className="TodoList-save"
-              onClick={handleAdd}
-            >
-              Save
-            </Button>
-          </div>
-        </Modal>
+        <HandleTaskModal
+          onConfirm={handleAdd}
+          onClose={() => setModal(false)}
+        />
       )}
     </div>
   );

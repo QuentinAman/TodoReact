@@ -99,19 +99,9 @@
   }
 }
 
-.TodoList-modal {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.TodoList-save {
-  align-self: flex-end;
-
-  color: #4cd9a0;
-}
-
 .TodoList-empty {
+  margin: auto;
+
   color: #a4a4a4;
 }
 

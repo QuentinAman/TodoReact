@@ -1,0 +1,11 @@
+.HandleTaskModal {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.HandleTaskModal-save {
+  align-self: flex-end;
+
+  color: #4cd9a0;
+}

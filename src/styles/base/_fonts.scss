@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@use 'utilities/functions' as func;
+
+/*! MyFont */
+
+$roboto: (
+  // Light: 300 normal,
+  // LightItalic: 300 italic,
+  Regular: 400 normal,
+  Medium: 400 normal,
+  Bold: 700 normal,
+  Italic: 400 italic,
+  // BoldItalic: 700 italic,
+);
+
+@each $variant-name, $variant-data in $roboto {
+  $base: 'Roboto/Roboto-' + $variant-name;
+  @font-face {
+    font-family: "Roboto";
+    font-style: nth($variant-data, 2);
+    font-weight: nth($variant-data, 1);
+    src: func.font(($base + ".woff2")) format('woff2'),
+         func.font(($base + ".woff")) format('woff')
+  }
+}
