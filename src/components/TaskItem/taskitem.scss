@@ -49,6 +49,7 @@
 
 .TaskItem-desc {
   position: relative;
+  margin-right: 0.5em;
 }
 
 .TaskItem-line {
@@ -60,6 +61,7 @@
   border: solid 1px;
   border-color: transparent;
 
+  pointer-events: none;
   transform: translateY(-50%);
   transition-duration: 0.2s;
   transition-property: width, border-color;
