@@ -1,0 +1,17 @@
+/*! SVG icons */
+// Default style for SVG icons
+
+.icon {
+  // Allows sizing by changing the icon’s font-size.
+  // (It should override the element's width/height attributes, if they exist.)
+  width: 1em;
+  height: 1em;
+  // This prevents having extra spaces below icons, and can be overriden easily
+  // to vertical-align:middle or vertical-align:-0.3em if needed.
+  vertical-align: top;
+  // Default path fill = value of the color property.
+  fill: currentColor;
+  // SVG elements may intercept click events in IE11.
+  // Let click events go through to a parent link or button instead.
+  pointer-events: none;
+}

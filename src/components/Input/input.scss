@@ -1,0 +1,57 @@
+.Input {
+  position: relative;
+
+  margin: 1em 0;
+
+  &:focus-within {
+    .Input-label {
+      top: 0;
+
+      font-size: 1.2rem;
+
+      color: #4cd9a0;
+    }
+  }
+}
+
+.Input-field {
+  padding: 1em;
+
+  width: 100%;
+  border: #bcbcbc 1px solid;
+
+  outline: none;
+}
+
+.Input-label {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  padding: 0 0.2em;
+
+  color: #a4a4a4;
+  background-color: white;
+
+  transform: translateY(-50%);
+  transition: all 0.2s;
+
+  &--active {
+    top: 0;
+
+    font-size: 1.2rem;
+
+    color: #4cd9a0;
+  }
+}
+
+.Input-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  font-size: 1rem;
+
+  color: #d25859;
+
+  transform: translateY(120%);
+}

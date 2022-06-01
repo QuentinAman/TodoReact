@@ -1,0 +1,23 @@
+.Modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
+.Modal-content {
+  padding: 1.5em 2em;
+
+  border-radius: 5px;
+  width: 90%;
+
+  background-color: white;
+}

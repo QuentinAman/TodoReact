@@ -1,0 +1,76 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TodoItem-text {
+  word-break: break-all;
+
+  color: #a4a4a4;
+
+  transition: color 0.2s;
+}
+
+.TodoItem-box {
+  position: relative;
+
+  border: 1px #c9c9c9 solid;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+
+  appearance: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:checked {
+    background-color: #4cd9a0;
+  }
+}
+
+.TodoItem-checkbox {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.TodoItem-check {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+
+  color: white;
+
+  transform: translate(-42%, -45%);
+  pointer-events: none;
+}
+
+.TodoItem-desc {
+  position: relative;
+}
+
+.TodoItem-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 0;
+  border: solid 1px;
+  border-color: transparent;
+
+  transform: translateY(-50%);
+  transition-duration: 0.2s;
+  transition-property: width, border-color;
+}
+
+.TodoItem-done {
+  color: #d2d0d0;
+}
+
+.TodoItem-extend {
+  width: 100%;
+
+  border-color: #b2b1b1;
+}
