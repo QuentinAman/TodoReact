@@ -1,6 +1,6 @@
 @use "utilities/mq";
 
-.TodoList {
+.TaskList {
   position: relative;
   margin: 5em auto;
 
@@ -20,7 +20,7 @@
   }
 }
 
-.TodoList-header {
+.TaskList-header {
   padding: 1em 1.5em;
 
   display: flex;
@@ -32,29 +32,29 @@
   color: #bcbcbc;
 }
 
-.TodoList-shortDate {
+.TaskList-shortDate {
   font-size: 2.5rem;
 
   color: #9796b7;
 }
 
-.TodoList-weekday {
+.TaskList-weekday {
   font-weight: bold;
   text-transform: capitalize;
 
   color: #7670ac;
 }
 
-.TodoList-month {
+.TaskList-month {
   text-transform: capitalize;
 }
 
-.TodoList-tasksNumber {
+.TaskList-tasksNumber {
   font-weight: bold;
   font-size: 1.8rem;
 }
 
-.TodoList-list {
+.TaskList-list {
   min-height: 50vh;
   max-height: 70vh;
   overflow-y: scroll;
@@ -67,7 +67,7 @@
   background-color: #f5f5f5;
 }
 
-.TodoList-button {
+.TaskList-button {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -99,17 +99,17 @@
   }
 }
 
-.TodoList-empty {
+.TaskList-empty {
   margin: auto;
 
   color: #a4a4a4;
 }
 
-.TodoList-weekNumber {
+.TaskList-weekNumber {
   position: relative;
 }
 
-.TodoList-ordinal {
+.TaskList-ordinal {
   position: absolute;
   right: -1.2rem;
 

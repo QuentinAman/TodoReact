@@ -9,7 +9,7 @@ export const Input = ({ value, placeholder, onChange, onEnter, className = "", e
         value={value}
         onChange={(e) => onChange(e.currentTarget.value)}
         className="Input-field"
-        id="add-todo"
+        id="add-task"
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             onEnter();
@@ -18,7 +18,7 @@ export const Input = ({ value, placeholder, onChange, onEnter, className = "", e
       />
       <label
         className={`Input-label ${value.length > 0 ? "Input-label--active" : ""}`}
-        htmlFor="add-todo"
+        htmlFor="add-task"
       >
         {placeholder}
       </label>

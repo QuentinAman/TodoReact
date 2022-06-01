@@ -1,10 +1,10 @@
-.TodoItem {
+.TaskItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.TodoItem-text {
+.TaskItem-text {
   word-break: break-all;
 
   color: #a4a4a4;
@@ -12,7 +12,7 @@
   transition: color 0.2s;
 }
 
-.TodoItem-box {
+.TaskItem-box {
   position: relative;
 
   border: 1px #c9c9c9 solid;
@@ -29,14 +29,14 @@
   }
 }
 
-.TodoItem-checkbox {
+.TaskItem-checkbox {
   position: relative;
 
   display: flex;
   align-items: center;
 }
 
-.TodoItem-check {
+.TaskItem-check {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
@@ -47,11 +47,11 @@
   pointer-events: none;
 }
 
-.TodoItem-desc {
+.TaskItem-desc {
   position: relative;
 }
 
-.TodoItem-line {
+.TaskItem-line {
   position: absolute;
   top: 50%;
   left: 0;
@@ -65,28 +65,28 @@
   transition-property: width, border-color;
 }
 
-.TodoItem-done {
+.TaskItem-done {
   color: #d2d0d0;
 }
 
-.TodoItem-extend {
+.TaskItem-extend {
   width: 100%;
 
   border-color: #b2b1b1;
 }
 
-.TodoItem-actions {
+.TaskItem-actions {
   display: flex;
 }
 
-.TodoItem-editDelete {
+.TaskItem-editDelete {
   margin-right: 0.5em;
 
   display: flex;
   gap: 0.2em;
 }
 
-.TodoItem-action {
+.TaskItem-action {
   display: flex;
   justify-content: center;
   align-items: center;
