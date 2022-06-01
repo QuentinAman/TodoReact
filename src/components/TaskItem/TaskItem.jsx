@@ -7,14 +7,12 @@ export const TaskItem = ({ task, onDone, onDelete, onEdit }) => {
 
   return (
     <li className="TaskItem">
-      <div className={`TaskItem-desc`}>
+      <div
+        onClick={onDone}
+        className={`TaskItem-desc`}
+      >
         <div className={`TaskItem-line ${task.done ? "TaskItem-extend" : ""}`} />
-        <span
-          onClick={onDone}
-          className={`TaskItem-text${task.done ? " TaskItem-done" : ""}`}
-        >
-          {task.text}
-        </span>
+        <span className={`TaskItem-text${task.done ? " TaskItem-done" : ""}`}>{task.text}</span>
       </div>
       <div className="TaskItem-actions">
         <div className="TaskItem-editDelete">
